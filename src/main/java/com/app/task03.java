@@ -32,6 +32,10 @@ public class task03 {
         System.out.println(s);
     }
 
+
+    /*
+     * Comment
+     */
     public static StringBuilder jsonParse(FileReader localfr) throws IOException {
         StringBuilder parsedText = new StringBuilder();
         String inputString;

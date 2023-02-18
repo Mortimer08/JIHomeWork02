@@ -13,7 +13,9 @@ import java.util.logging.SimpleFormatter;
 public class task02 {
     public static void main(String[] args) throws SecurityException, IOException {
         Logger task02Logger = Logger.getLogger(task02.class.getName());
-        FileHandler taskFileHandler = new FileHandler("task02log.txt", true);
+        String pathSeparator = System.getProperty("file.separator");
+        String logFilePath = String.format("ext%stask02log.txt",pathSeparator);
+        FileHandler taskFileHandler = new FileHandler(logFilePath, true);
         task02Logger.addHandler(taskFileHandler);
         SimpleFormatter task02SimpleFormatter = new SimpleFormatter();
         taskFileHandler.setFormatter(task02SimpleFormatter);

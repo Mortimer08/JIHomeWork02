@@ -21,7 +21,9 @@ public class task01 {
         String sqlRequest = "SELECT * FROM students WHERE";
         StringBuilder fullRequest = new StringBuilder();
         fullRequest.append(sqlRequest);
-        FileReader fr = new FileReader("ext/whereParameters.json");
+        String pathSeparator = System.getProperty("file.separator");
+        String filePath = String.format("ext%swhereParameters.json",pathSeparator);
+        FileReader fr = new FileReader(filePath);
         BufferedReader br = new BufferedReader(fr);
 
         String whereParameters = br.readLine();

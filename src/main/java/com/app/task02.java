@@ -4,6 +4,7 @@
 package com.app;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.logging.FileHandler;
@@ -13,8 +14,10 @@ import java.util.logging.SimpleFormatter;
 public class task02 {
     public static void main(String[] args) throws SecurityException, IOException {
         Logger task02Logger = Logger.getLogger(task02.class.getName());
-        String pathSeparator = System.getProperty("file.separator");
-        String logFilePath = String.format("ext%stask02log.txt",pathSeparator);
+        ArrayList<String> filePathDirs = new ArrayList<String>();
+        filePathDirs.add("ext");
+        filePathDirs.add("task02log.txt");
+        String logFilePath = getFilePath(filePathDirs).toString();
         FileHandler taskFileHandler = new FileHandler(logFilePath, true);
         task02Logger.addHandler(taskFileHandler);
         SimpleFormatter task02SimpleFormatter = new SimpleFormatter();
@@ -44,5 +47,17 @@ public class task02 {
                         Arrays.toString(arr)));
             }
         }
+    }
+
+    public static StringBuilder getFilePath(ArrayList<String> dirs) {
+        String separator = System.getProperty("file.separator");
+        StringBuilder path = new StringBuilder();
+        for (int i = 0; i < dirs.size() - 1; i++) {
+
+            path.append(dirs.get(i));
+            path.append(separator);
+        }
+        path.append(dirs.get(dirs.size() - 1));
+        return path;
     }
 }

@@ -41,8 +41,8 @@ public class task03 {
                 while (!(inputString = br.readLine()).contains("}")) {
                     if (inputString.contains(":")) {
                         String[] line = inputString.split(":");
-                        line[0] = line[0].replace("\"", "").replace(",","").trim();
-                        line[1] = line[1].replace("\"", "").replace(",","").trim();
+                        line[0] = line[0].replace("\"", "").replace(",", "").trim();
+                        line[1] = line[1].replace("\"", "").replace(",", "").trim();
 
                         if (line[0].equals("фамилия")) {
                             parsedText.append(String.format("Студент %s", line[1]));

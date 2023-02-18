@@ -32,6 +32,11 @@ public class task03 {
         System.out.println(s);
     }
 
+    /*
+     * Данные из файла считываются построчно
+     * Строка, содержащая : разбивается на две части, очищается от кавычек, запятых и крайних пробелов
+     * В зависимости от содержания левой части строки (до :) формируется строка, которую добавляем к результату
+     */
     public static StringBuilder jsonParse(FileReader localfr) throws IOException {
         StringBuilder parsedText = new StringBuilder();
         String inputString;
